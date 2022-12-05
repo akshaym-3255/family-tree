@@ -12,19 +12,19 @@ run
 ```sh
 go install
 ```
-this will build go project and add compiled binary to GOROOT
-make sure path of GOROOT exits in PATH variable
+this will build go project and add compiled binary to GOPATH
+make sure path of GOPATH exits in PATH variable
 
 
 ## Usage
 to add a person
 ```sh
-famliy-tree add person <person name>
+family-tree add person <person name>
 ```
  
  to add relationship 
 ```sh
-family-tree add realtionship <relation>
+family-tree add relationship <relation>
 ```
 
 to define relationship
@@ -42,9 +42,3 @@ to get father
 ```sh
 family-tree father --of=<person-name>
 ```
-
-
-
-
-
-
