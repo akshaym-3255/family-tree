@@ -26,7 +26,7 @@ var countCmd = &cobra.Command{
 		relationshipService := service.NewRelationshipService(relationshipRepo)
 		memberRepo := repositories.NewMemberRepository()
 		memberService := service.NewMemberService(memberRepo, relationshipService)
-		count, err := memberService.GetCountOfRelationShip(member,relation)
+		count, err := memberService.GetCountOfRelationShip(member, relation)
 		if err != nil {
 			fmt.Println(err)
 			return
