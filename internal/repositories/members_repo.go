@@ -1,11 +1,14 @@
 package repositories
 
 import (
+	"embed"
 	"encoding/json"
 	"os"
 
 	"github.com/akshaym-3255/family-tree/internal/models"
 )
+
+var MemberFile embed.FS
 
 type MemberRepository interface {
 	GetMembers() ([]models.Member, error)
@@ -22,7 +25,7 @@ func NewMemberRepository() MemberRepository {
 func (p *memberRepository) GetMembers() ([]models.Member, error) {
 	var members []models.Member
 
-	data, err := os.ReadFile("internal/database/members.json")
+	data, err := MemberFile.ReadFile("internal/database/members.json")
 	if err != nil {
 		return nil, err
 	}
