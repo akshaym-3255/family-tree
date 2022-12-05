@@ -1,14 +1,11 @@
 package repositories
 
 import (
-	"embed"
 	"encoding/json"
 	"os"
 
 	"github.com/akshaym-3255/family-tree/internal/models"
 )
-
-var RelationFile embed.FS
 
 type RelationshipRepository interface {
 	GetRelationships() (models.Relationship, error)
@@ -25,7 +22,7 @@ func NewRelationshipRepository() RelationshipRepository {
 func (r *relationshipRepository) GetRelationships() (models.Relationship, error) {
 	var relationships models.Relationship
 
-	data, err := RelationFile.ReadFile("internal/database/relations.json")
+	data, err := os.ReadFile("internal/database/relations.json")
 	if err != nil {
 		return models.Relationship{}, err
 	}
