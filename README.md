@@ -42,3 +42,7 @@ to get father
 ```sh
 family-tree father --of=<person-name>
 ```
+
+## output
+![alt output_image](static/family-tree.PNG)
+
